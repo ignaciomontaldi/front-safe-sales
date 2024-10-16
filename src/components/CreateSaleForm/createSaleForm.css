@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#error-container {
+    @apply w-full;
+    @apply mt-1;
+    @apply flex;
+    @apply justify-start;
+    @apply text-redSalmon;
+    @apply items-center;
+    @apply italic;
+}
+
+#error-container svg{
+    @apply mr-2;
+}
+
+section {
+    @apply w-full;
+    @apply my-10;
+}
+
+section form fieldset {
+    @apply w-[40%];
+    @apply my-12;
+    @apply flex;
+    @apply flex-col;
+}
+
+section form fieldset label {
+    @apply text-xl;
+    @apply mb-2;
+}
+
+section form fieldset textarea {
+    @apply min-h-[100px];
+    @apply p-2;
+    @apply border-2;
+    @apply border-graySlate;
+    @apply rounded-xs;
+}
+
+section form fieldset input {
+    @apply w-[60%];
+    @apply py-1;
+    @apply px-4;
+    @apply italic;
+    @apply text-xl;
+    @apply border-2;
+    @apply border-graySlate;
+    @apply rounded-full;
+}
+
+section form fieldset select {
+    @apply w-[50%];
+    @apply py-1;
+    @apply px-4;
+    @apply text-xl;
+    @apply border-2;
+    @apply border-graySlate;
+    @apply rounded-full;
+}
+
+section form #btn-container {
+    @apply w-[65%];
+    @apply flex;
+    @apply justify-between;
+}
+
+section form #btn-container button {
+    @apply min-w-[300px];
+    @apply py-4;
+    @apply px-8;
+    @apply text-lightGray;
+    @apply text-xl;
+    @apply font-semibold;
+    @apply rounded-xs;
+}
+
+section form div button:hover {
+    @apply underline;
+}

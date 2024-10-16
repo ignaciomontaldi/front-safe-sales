@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+html, body {
+  @apply w-[100vw];
+  @apply overflow-x-hidden;
+  @apply font-body;
+}
+
+body {
+  @apply bg-lightGray;
+  @apply py-10;
+}

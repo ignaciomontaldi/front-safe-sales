@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+  @apply w-[80%];
+  @apply mx-auto;
+  @apply px-16;
+  @apply flex;
+  @apply flex-col;
+  @apply max-w-[1300px];
+  @apply bg-lightBlue;
+  @apply border-2;
+  @apply border-graySlate;
+}
+
+main section {
+  @apply w-full;
+}

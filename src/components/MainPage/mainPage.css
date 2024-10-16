@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#title-container {
+    @apply w-full;
+    @apply mt-10;
+    @apply flex;
+    @apply items-center;
+    @apply justify-between;
+}
+
+#title-container #timer {
+    @apply flex;
+    @apply font-semibold;
+    @apply gap-x-14;
+}
+
+#search-bar {
+    @apply w-[90%];
+    @apply mt-14;
+    @apply flex;
+    @apply gap-x-6;
+    @apply items-center;
+}
+
+#search-bar #search-input-container {
+    @apply w-[90%];
+    @apply max-w-[450px];
+    @apply flex;
+    @apply items-center;
+    @apply border-2;
+    @apply border-softBlack;
+    @apply bg-lightGray;
+    @apply rounded-full;
+}
+
+main section #search-bar div input {
+    @apply w-full;
+    @apply py-2;
+    @apply px-3;
+    @apply rounded-full;
+}
+
+#search-bar div svg {
+    @apply size-5;
+    @apply mr-5;
+    @apply ml-2;
+    @apply text-darkGray;
+}
+
+main #search-reset-btn-container {
+    @apply flex;
+}
+
+#search-btn {
+    @apply mr-10;
+    @apply px-12;
+    @apply py-3;
+    @apply bg-darkGray;
+    @apply text-lightGray;
+    @apply font-semibold;
+    @apply rounded-xs;
+}
+
+#reset-search {
+    @apply px-12;
+    @apply py-3;
+    @apply bg-softBlack;
+    @apply text-lightGray;
+    @apply font-semibold;
+    @apply rounded-xs;
+}
+
+#pagination {
+    @apply w-fit;
+    @apply my-6;
+    @apply mx-auto;
+    @apply px-8;
+    @apply py-2;
+    @apply bg-graySlate;
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    @apply gap-x-10;
+    @apply rounded-xs;
+}
+
+#pagination p {
+    @apply text-xl;
+    @apply text-lightGray;
+    @apply font-bold;
+    @apply hover:cursor-pointer;
+}

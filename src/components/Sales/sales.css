@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#sales-container {
+    @apply w-full;
+    @apply mt-12;
+    @apply pb-16;
+    @apply px-[76px];
+    @apply mx-auto;
+    @apply bg-graySlate;
+    @apply rounded-xs;
+}
+
+#sales-container #filter-container {
+    @apply w-[70%];
+    @apply pt-10;
+    @apply flex;
+    @apply justify-between;
+    @apply items-center;
+}
+
+#sales-container #filter-container span {
+    @apply flex;
+    @apply items-center;
+    @apply gap-x-10;
+}
+
+#sales-container #filter-container span select{
+    @apply bg-lightGray;
+    @apply py-2;
+    @apply px-3;
+    @apply italic;
+    @apply rounded-full;
+}
