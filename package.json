@@ -1,16 +1,20 @@
 {
-  "name": "app",
+  "name": "front-safe-sales",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://montaldi3111.github.io/front-safe-sales/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
+    "gh-pages": "^6.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",

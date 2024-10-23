@@ -30,13 +30,14 @@ function CreateSaleForm() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
                     <label htmlFor="product-list">Cantidad de productos</label>
-                    <textarea rows={5} cols={30}  className={errors.totalPrice && "border-2 border-redSalmon"} {...register("productList")}></textarea>
+                    <textarea rows={5} cols={30}  className={errors.productList && "border-2 border-redSalmon"} {...register("productList")}></textarea>
                     {errors && errors.productList && <div id="error-container"><TbAlertCircle /><p id="error-msg">{errors.productList?.message}</p></div>}
                 </fieldset>
                 <fieldset>
                     <label htmlFor="total-price">Importe a pagar</label>
-                    <input type="text" className={errors.totalPrice && "border-2 border-redSalmon"} id="total-price" {...register("totalPrice")}/>
-                    {errors && errors.productList && <div id="error-container"><TbAlertCircle /><p id="error-msg">{errors.totalPrice?.message}</p></div>}
+                        
+                    <input type="text" className={errors.totalPrice && "border-2 border-redSalmon"} id="total-price" {...register("totalPrice", {})}/>
+                    {errors && errors.totalPrice && <div id="error-container"><TbAlertCircle /><p id="error-msg">{errors.totalPrice?.message}</p></div>}
                 </fieldset>
                 <fieldset>
                     <label htmlFor="payment-method">Medio de pago</label>
