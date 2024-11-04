@@ -18,10 +18,10 @@ function Header() {
     <header>
         <nav>
             <div id="home-tab" onClick={toHomePage}>
-                <p>Página Principal</p>
+                <p className={tab === 0 ? "font-bold underline" : undefined}>Página Principal</p>
             </div>
             <div id="create-sale-tab" onClick={toCreateSaleForm}>
-                <p>Crear Venta</p>
+                <p  className={tab === 1 ? "font-bold underline" : undefined}>Crear Venta</p>
             </div>
         </nav>
     </header>

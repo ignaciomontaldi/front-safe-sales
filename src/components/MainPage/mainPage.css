@@ -80,19 +80,21 @@ main #search-reset-btn-container {
     @apply w-fit;
     @apply my-6;
     @apply mx-auto;
-    @apply px-8;
-    @apply py-2;
     @apply bg-graySlate;
     @apply flex;
     @apply justify-center;
     @apply items-center;
-    @apply gap-x-10;
+    @apply gap-x-2;
     @apply rounded-xs;
 }
 
 #pagination p {
+    @apply px-4;
+    @apply py-2;
+    @apply rounded-xs;
     @apply text-xl;
     @apply text-lightGray;
     @apply font-bold;
     @apply hover:cursor-pointer;
+    @apply hover:underline;
 }

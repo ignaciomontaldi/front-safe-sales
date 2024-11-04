@@ -127,6 +127,7 @@ function MainPage() {
                 {Array.from({ length: totalPages }, (_, index) => (
           <p
             key={index + 1}
+            className={currentPage === (index + 1) ? "bg-darkGray" : undefined}
             onClick={() => handlePageChange(index + 1)}
           >
             {index + 1}
