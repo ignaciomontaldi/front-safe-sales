@@ -5,6 +5,7 @@ import { FilterProvider } from '../../context/filterContext'
 import { Sale } from '../../types/sale.types'
 import { useState } from 'react'
 import { useSearch } from '../../hooks/useSearch'
+import { useLoading } from '../../hooks/useLoading'
 function MainPage() {
 
     const sales : Sale[] = [
@@ -73,6 +74,7 @@ function MainPage() {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [copySales, setCopySales] = useState<Sale[]>(sales)
     const {inputValue, setInputValue} = useSearch();
+    const {setLoad} = useLoading();
     const itemsPerPage = 5;
     const totalPages = Math.ceil(sales.length / itemsPerPage);
     const lastIndex = currentPage * itemsPerPage;
@@ -80,23 +82,29 @@ function MainPage() {
     const currentSales = copySales.slice(firstIndex, lastIndex);
 
       const handlePageChange = (pageNumber:number) => {
+        setLoad(true);
         setCurrentPage(pageNumber);
+        setLoad(false);
       }
 
       const handleSearch = () => {
+        setLoad(true);
         setCopySales(sales.filter(sale => {
           return sale.products.toLowerCase().includes(inputValue.toLowerCase())
         }))
+        setLoad(false);
       }
 
       const resetSearch = () => {
+        setLoad(true);
         setInputValue('')
         setCopySales(sales)
+        setLoad(false);
       }
 
     return (
         <>
-            <section>
+            <section id="home-view">
                 <span id="title-container">
                     <h1 className='text-3xl font-semibold'>Safe Sales</h1>
                     <Timer />

@@ -16,7 +16,7 @@
     @apply mr-2;
 }
 
-section {
+#create-form-view {
     @apply w-full;
     @apply my-10;
 }

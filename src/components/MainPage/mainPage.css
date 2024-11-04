@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+#home-view {
+    @apply w-full;
+    @apply my-10;
+}
+
 #title-container {
     @apply w-full;
-    @apply mt-10;
     @apply flex;
     @apply items-center;
     @apply justify-between;
@@ -13,12 +17,12 @@
 #title-container #timer {
     @apply flex;
     @apply font-semibold;
-    @apply gap-x-14;
+    @apply gap-x-8;
 }
 
 #search-bar {
     @apply w-[90%];
-    @apply mt-14;
+    @apply my-4;
     @apply flex;
     @apply gap-x-6;
     @apply items-center;

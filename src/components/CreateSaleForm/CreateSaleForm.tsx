@@ -24,7 +24,7 @@ function CreateSaleForm() {
 
   return (
     <>
-        <section>
+        <section id="create-form-view">
             <Toaster richColors />
             <h1 className="text-2xl font-semibold text-softBlack">Crear Venta</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
