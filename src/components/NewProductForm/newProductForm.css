@@ -13,6 +13,10 @@
     @apply text-softBlack;
 }
 
+#new-product-form fieldset {
+    @apply mt-0;
+}
+
 #new-product-form #btn-container {
     @apply mt-10;
 }
@@ -31,4 +35,22 @@
 #new-product-form #btn-container #cancel-btn  {
     @apply bg-darkGray;
     @apply text-lightGray;
+    @apply hover:bg-slate-700;
+}
+
+#new-product-form fieldset #error-msg {
+    @apply flex;
+    @apply items-center;
+    @apply text-redSalmon;
+    @apply my-2;
+}
+
+#new-product-form fieldset #error-msg svg {
+    @apply w-5;
+    @apply h-5;
+    @apply mr-4;
+}
+
+#new-product-form fieldset .error-input {
+    @apply border-redSalmon;
 }

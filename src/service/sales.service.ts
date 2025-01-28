@@ -25,7 +25,6 @@ export const getSaleByID = async (id: string): Promise<Sale> => {
         })
         if(response.ok) {
             const data = await response.json();
-            console.log(data)
             return data as Sale;
         } else {
             throw new Error(`HTTP error! status: ${response.status}`);

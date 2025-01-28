@@ -15,6 +15,7 @@ function Header() {
     {id: 2, name: "Inventario"},
     {id: 3, name: "Clientes"},
     {id: 4, name: "Expensas"},
+    {id: 5, name: "Proveedores"},
   ]
   
   const handleChangeTab = (id: number) => {

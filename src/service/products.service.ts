@@ -1,6 +1,9 @@
 import { API_URL } from "../constants/api";
+import { NewProductFormData } from "../types/forms.types";
 
 export const PRODUCTS_ENDPOINT = "products";
+
+// GET Methods
 
 export const getProducts = async () => {
   try {
@@ -15,3 +18,12 @@ export const getProducts = async () => {
     throw new Error("Could not reach server");
   }
 };
+
+export const addProduct = async (product:NewProductFormData) => {
+  const options: RequestInit = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(product),
+  };
+  return fetch(`${API_URL}${PRODUCTS_ENDPOINT}`, options);
+}

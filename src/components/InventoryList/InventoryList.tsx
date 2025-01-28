@@ -1,7 +1,7 @@
-import { InventoryProduct } from "../../types/product.types";
+import { Product } from "../../types/product.types";
 
 type InventoryListParams = {
-    products: InventoryProduct[];
+    products: Product[];
     firstIndex: number;
     lastIndex: number;
   };
@@ -9,7 +9,6 @@ type InventoryListParams = {
 const InventoryList = ({ products, firstIndex, lastIndex } : InventoryListParams) => {
 
   const currentProducts = products.slice(firstIndex, lastIndex);
-
   return (
     <>
       {!products && <p>No hay productos en el inventario.</p>}
@@ -32,7 +31,7 @@ const InventoryList = ({ products, firstIndex, lastIndex } : InventoryListParams
                   <td>{product.name}</td>
                   <td>{product.trademark}</td>
                   <td>${product.price}</td>
-                  <td>{product.stock}</td>
+                  <td>{product.available ? product.stock : 'Sin Stock'}</td>
                   <td>{product.supplier}</td>
                 </tr>
               );

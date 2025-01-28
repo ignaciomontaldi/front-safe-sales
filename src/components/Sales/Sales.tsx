@@ -29,10 +29,11 @@ function Sales({sales} : {sales: Sale[]}) {
                     <option value="price-asc">Precio (menor a mayor)</option>
                     <option value="date-desc">Fecha (mayor a menor)</option>
                     <option value="date-asc">Fecha (menor a mayor)</option>
-                    <option value="transfers">Transferencía</option>
-                    <option value="debit">Débito</option>
-                    <option value="credit">Crédito</option>
-                    <option value="cash">Efectivo</option>
+                    <option value="transfers">TRANSFERENCIA</option>
+                    <option value="debit">DEBITO</option>
+                    <option value="credit">CREDITO</option>
+                    <option value="cash">EFECTIVO</option>
+                    <option value="qr">QR</option>
                 </select>
             </span>
         </div>

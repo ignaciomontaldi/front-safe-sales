@@ -77,7 +77,3 @@ section form #btn-container button {
     @apply font-semibold;
     @apply rounded-xs;
 }
-
-section form div button:hover {
-    @apply underline;
-}

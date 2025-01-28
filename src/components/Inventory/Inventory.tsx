@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
-import { InventoryProduct } from "../../types/product.types";
+import { Product } from "../../types/product.types";
 import "./inventory.css";
 import { getProducts } from "../../service/products.service";
 import Loading from "../Loading/Loading";
 import { useLoading } from "../../hooks/useLoading";
 import InventoryList from "../InventoryList/InventoryList";
 import NewProductForm from "../NewProductForm/NewProductForm";
+import { Toaster } from "sonner";
 
 const Inventory = () => {
-  const [products, setProducts] = useState<InventoryProduct[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [inventoryView, setInventoryView] = useState<number>(0);
   const itemsPerPage = 5;
   const totalPages = Math.ceil(products.length / itemsPerPage);
-  const lastIndex = products.length * itemsPerPage;
+  const lastIndex = currentPage * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
 
   const { setLoad } = useLoading();
@@ -40,6 +41,7 @@ const Inventory = () => {
 
   return (
     <section className="inventory-view">
+      <Toaster richColors/>
       <div className="table-container">
         <span className="title-container">
           <h1>{inventoryView === 0 ? "Inventario" : "Agregar un Producto"}</h1>
