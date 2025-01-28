@@ -11,8 +11,7 @@ table {
 }
 
 table, th, td {
-    @apply py-4;
-    @apply px-6;
+    @apply p-3;
     @apply border-[4px];
     @apply border-graySlate;
     @apply border-collapse;

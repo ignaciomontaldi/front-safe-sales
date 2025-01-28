@@ -3,74 +3,13 @@ import "./mainPage.css"
 import Timer from '../Timer/Timer'
 import { FilterProvider } from '../../context/filterContext'
 import { Sale } from '../../types/sale.types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSearch } from '../../hooks/useSearch'
 import { useLoading } from '../../hooks/useLoading'
+import { getSales } from '../../service/sales.service'
 function MainPage() {
 
-    const sales : Sale[] = [
-        {
-          date: "11/10/2024",
-          products: "1 kilo de milanesas, 3 kilos de pechuga",
-          total: 15689.00,
-          payment: "Efectivo",
-        },
-        {
-          date: "11/10/2024",
-          products: "1 kilo de milanesas",
-          total: 12564.00,
-          payment: "Débito",
-        },
-        {
-          date: "10/10/2024",
-          products: "2 kilos de patamuslo",
-          total: 5254.00,
-          payment: "Crédito",
-        },
-        {
-          date: "10/10/2024",
-          products: "3 kilos de pechuga",
-          total: 8569.00,
-          payment: "Transferencia",
-        },
-        {
-          date: "09/10/2024",
-          products: "3 kilo de milanesas",
-          total: 3000.00,
-          payment: "Efectivo",
-        },
-        {
-          date: "09/10/2024",
-          products: "1 kilo de milanesas, 3 kilos de pechuga",
-          total: 15689.00,
-          payment: "Efectivo",
-        },
-        {
-          date: "09/10/2024",
-          products: "1 kilo de milanesas",
-          total: 12564.00,
-          payment: "Débito",
-        },
-        {
-          date: "08/10/2024",
-          products: "2 kilos de patamuslo",
-          total: 5254.00,
-          payment: "Crédito",
-        },
-        {
-          date: "08/10/2024",
-          products: "3 kilos de pechuga",
-          total: 8569.00,
-          payment: "Transferencia",
-        },
-        {
-          date: "07/10/2024",
-          products: "3 kilo de milanesas",
-          total: 3000.00,
-          payment: "Efectivo",
-        },
-      ]
-
+    const [sales, setSales] = useState<Sale[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [copySales, setCopySales] = useState<Sale[]>(sales)
     const {inputValue, setInputValue} = useSearch();
@@ -81,6 +20,21 @@ function MainPage() {
     const firstIndex = lastIndex - itemsPerPage;
     const currentSales = copySales.slice(firstIndex, lastIndex);
 
+    useEffect(() => {
+        const fetchSales = async () => {
+          try {
+            const result = await getSales();
+            setSales(result)
+            setCopySales(result)
+          } catch (error) {
+            throw new Error('Error fetching sales')
+          }
+        }
+
+      fetchSales();
+    },[]);
+
+
       const handlePageChange = (pageNumber:number) => {
         setLoad(true);
         setCurrentPage(pageNumber);
@@ -89,8 +43,8 @@ function MainPage() {
 
       const handleSearch = () => {
         setLoad(true);
-        setCopySales(sales.filter(sale => {
-          return sale.products.toLowerCase().includes(inputValue.toLowerCase())
+        setCopySales(sales.filter((sale,index) => {
+          return sale.products[index].name.toLowerCase().includes(inputValue.toLowerCase())
         }))
         setLoad(false);
       }

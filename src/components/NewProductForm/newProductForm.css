@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind component;
+@tailwind utilities;
+
+.inventory-view .table-container {
+    @apply bg-lightBlue;
+}
+
+#new-product-form {
+    @apply flex;
+    @apply flex-row;
+    @apply flex-wrap;
+    @apply text-softBlack;
+}
+
+#new-product-form #btn-container {
+    @apply mt-10;
+}
+
+#new-product-form #btn-container button {
+    @apply p-4;
+    @apply border-2;
+}
+
+#new-product-form #btn-container #add-product  {
+    @apply bg-softBlack;
+    @apply text-lightGray;
+    @apply hover:bg-black;
+}
+
+#new-product-form #btn-container #cancel-btn  {
+    @apply bg-darkGray;
+    @apply text-lightGray;
+}

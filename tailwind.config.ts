@@ -10,12 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         "lightBlue": "#E0F7FA",
+        "inactiveLightBlue": "#EBF7FA",
         "lightGray": "#F5F5F5",
         "greenMint": "#A5D6A7",
         "graySlate": "#90A4AE",
         "softYellow": "#FFF59D",
         "redSalmon": "#EF9A9A",
         "softBlack": "#333333",
+        "inactiveSoftBlack": "#707070",
         "darkGray": "#757575",
       },
       fontFamily: {

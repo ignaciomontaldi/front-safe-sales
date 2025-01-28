@@ -1,28 +1,38 @@
 import { useTab } from "../../hooks/useTab"
 import "./header.css"
+
+type TabType = {
+  id: number;
+  name: string;
+}
+
 function Header() {
   const {tab, setTab} = useTab();
   
-  const toHomePage = () => {
-    if(tab !== 0){
-      setTab(0);
-    }
+  const tabs:TabType[] = [
+    {id: 0, name: "Inicio"},
+    {id: 1, name: "Crear Venta"},
+    {id: 2, name: "Inventario"},
+    {id: 3, name: "Clientes"},
+    {id: 4, name: "Expensas"},
+  ]
+  
+  const handleChangeTab = (id: number) => {
+    if(tab !== id){
+        setTab(id);
+    } 
   }
 
-  const toCreateSaleForm = () => {
-    if(tab!== 1){
-      setTab(1);
-    }
-  }
   return (
     <header>
         <nav>
-            <div id="home-tab" onClick={toHomePage}>
-                <p className={tab === 0 ? "font-bold underline" : undefined}>Página Principal</p>
-            </div>
-            <div id="create-sale-tab" onClick={toCreateSaleForm}>
-                <p  className={tab === 1 ? "font-bold underline" : undefined}>Crear Venta</p>
-            </div>
+            {tabs.map((t:TabType) => {
+              return (
+                <div key={t.id} className={tab!== t.id? "bg-inactiveLightBlue text-inactiveSoftBlack" : undefined} onClick={()=>handleChangeTab(t.id)}>
+                  <p className={tab === t.id? "font-bold underline" : undefined}>{t.name}</p>
+                </div>
+              )
+            })}
         </nav>
     </header>
   )

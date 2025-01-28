@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind component;
+
+.inventory-view {
+  @apply py-4;
+  @apply overflow-y-hidden;
+}
+
+.inventory-view table {
+  @apply w-full;
+  @apply mx-0;
+  @apply my-0;
+}
+
+.inventory-view .table-container .title-container {
+  @apply my-4;
+  @apply flex;
+  @apply gap-x-20;
+  @apply items-center;
+  @apply text-center;
+}
+
+.inventory-view .table-container .btn-container button {
+  @apply px-10;
+  @apply py-3;
+  @apply rounded-[5px];
+  @apply font-bold;
+  @apply text-white;
+  @apply hover:underline;
+}
+
+.inventory-view .table-container .btn-container .edit-btn {
+  @apply bg-darkGray;
+}
+
+.inventory-view .table-container .btn-container .add-btn {
+  @apply ml-10;
+  @apply bg-softBlack;
+}
+
+.inventory-view .table-container h1 {
+  @apply my-2;
+  @apply flex-none;
+  @apply ml-[2px];
+  @apply font-bold;
+  @apply text-softBlack;
+  @apply text-[24px];
+}
+
+.inventory-view .table-container {
+  @apply mt-4;
+  @apply px-5;
+  @apply py-4;
+  @apply bg-graySlate;
+  @apply rounded-xs;
+  @apply place-content-center;
+}
+
+.pages-container {
+  @apply w-fit;
+  @apply mt-6;
+  @apply mx-auto;
+  @apply bg-graySlate;
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  @apply gap-x-2;
+  @apply rounded-xs;
+}
+
+.pages-container p {
+  @apply px-4;
+  @apply py-1;
+  @apply rounded-xs;
+  @apply text-xl;
+  @apply text-lightGray;
+  @apply font-bold;
+  @apply hover:bg-darkGray;
+  @apply hover:cursor-pointer;
+}

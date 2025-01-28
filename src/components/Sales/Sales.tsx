@@ -6,6 +6,7 @@ import { filterSales } from '../../utils/filterSales';
 import Loading from '../Loading/Loading';
 import { useLoading } from '../../hooks/useLoading';
 function Sales({sales} : {sales: Sale[]}) {
+  
   const {filter, setFilter} = useFilter();
   const {load, setLoad} = useLoading();
   const changeFilter = (filter:string) => {

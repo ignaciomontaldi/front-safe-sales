@@ -10,29 +10,19 @@ header {
 header nav {
     @apply flex;
     @apply items-center;
-    @apply text-sm;
 }
 
 header nav div{
     @apply w-[20%];
-    @apply max-w-[200px];
+    @apply max-w-[190px];
     @apply bg-lightBlue;
     @apply text-center;
-    @apply py-4;
+    @apply py-2;
     @apply px-7;
-    @apply text-sm;
-    @apply underline;
-    @apply hover:cursor-pointer;
-}
-
-header nav #home-tab {
-    @apply border-t-2;
-    @apply border-l-2;
-    @apply border-graySlate;
-}
-
-header nav #create-sale-tab {
+    @apply text-[20px];
+    @apply rounded-t-sm;
     @apply border-t-2;
     @apply border-x-2;
     @apply border-graySlate;
+    @apply hover:cursor-pointer;
 }
