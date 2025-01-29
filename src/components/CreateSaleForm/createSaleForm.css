@@ -28,17 +28,54 @@ section form fieldset {
     @apply flex-col;
 }
 
-section form fieldset label {
-    @apply text-xl;
-    @apply mb-2;
+section form #product-fieldset {
+    @apply w-full;
 }
 
-section form fieldset textarea {
-    @apply min-h-[100px];
-    @apply p-2;
-    @apply border-2;
-    @apply border-graySlate;
-    @apply rounded-xs;
+section form #product-fieldset #product-quantity-container {
+    @apply w-full;
+    @apply my-8;
+    @apply flex;
+    @apply flex-col;
+    @apply gap-y-4;
+}
+
+section form #product-fieldset #product-input {
+    @apply w-[30%];
+    @apply max-w-[450px];
+}
+
+section form #product-fieldset #quantity-input {
+    @apply w-[10%];
+    @apply max-w-[100px];
+}
+
+section form #product-fieldset #add-product-btn {
+    @apply w-[40%];
+    @apply p-4;
+    @apply bg-softBlack;
+    @apply text-lightGray;
+    @apply text-sm;
+    @apply tracking-wide;
+    @apply font-bold;
+    @apply rounded-[5px];
+}
+
+section form #product-fieldset #remove-product-btn {
+    @apply w-[15%];
+    @apply my-4;
+    @apply py-2;
+    @apply bg-redSalmon;
+    @apply text-lightGray;
+    @apply text-sm;
+    @apply tracking-wide;
+    @apply font-bold;
+    @apply rounded-[5px];
+}
+
+section form fieldset label {
+    @apply text-xl;
+    @apply mt-2;
 }
 
 section form fieldset input {
@@ -53,7 +90,6 @@ section form fieldset input {
 }
 
 section form fieldset select {
-    @apply w-[50%];
     @apply py-1;
     @apply px-4;
     @apply text-xl;
@@ -62,13 +98,21 @@ section form fieldset select {
     @apply rounded-full;
 }
 
+section form fieldset #customer-input {
+    @apply w-[80%];
+}
+
+section form fieldset #payment-method {
+    @apply w-[45%];
+}
+
 section form #btn-container {
     @apply w-[65%];
     @apply flex;
     @apply justify-between;
 }
 
-section form #btn-container button {
+section form #btn-container #submit-btn, section #btn-container #reset-btn{
     @apply min-w-[300px];
     @apply py-4;
     @apply px-8;

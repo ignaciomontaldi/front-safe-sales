@@ -1,3 +1,5 @@
+import { Product } from "./product.types";
+
 export interface Sale {
     id:          string;
     totalAmount: string;
@@ -6,17 +8,7 @@ export interface Sale {
     payment:     string;
     createdAt:   string;
     paidAt:      string;
-    products:    Producto[];
+    products:    Product[];
 }
 
-export interface Producto {
-    id:        string;
-    name:      string;
-    price:     string;
-    stock:     string;
-    supplier:  string;
-    trademark: string;
-    createdAt: string;
-    updatedAt: string;
-    available: boolean;
-}
+
