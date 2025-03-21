@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+#new-client-form-container #new-client-form{
+    @apply w-full;
+}
+
+#new-client-form fieldset {
+    @apply w-full;
+    @apply mt-4;
+    @apply flex;
+    @apply flex-col;
+}
+
+#new-client-form fieldset label {
+    @apply text-xl;
+    @apply mt-2;
+    @apply italic;
+}
+
+#new-client-form fieldset input {
+    @apply py-1;
+    @apply px-4;
+    @apply italic;
+    @apply text-xl;
+    @apply border-2;
+    @apply border-graySlate;
+    @apply rounded-full;
+}
+
+#new-client-form fieldset #fullname-input {
+    @apply w-[35%];
+}
+
+#new-client-form fieldset #frequency-input {
+    @apply w-[20%];
+}
+
+#new-client-form fieldset #phone-input {
+    @apply w-[30%];
+}
+
+#new-client-form #btn-container button {
+    @apply min-w-[300px];
+    @apply py-4;
+    @apply px-8;
+    @apply text-lightGray;
+    @apply text-xl;
+    @apply font-semibold;
+    @apply rounded-xs;
+}

@@ -12,4 +12,10 @@ export type CreateSaleFormData = {
     productList?: ProductData[];
     customer: string;
     payment: string;
-  };
+};
+
+export type CreateClientFormData = {
+    fullname: string;
+    frequency: string;
+    phone: string;
+}

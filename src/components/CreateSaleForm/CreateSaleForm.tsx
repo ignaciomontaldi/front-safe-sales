@@ -56,7 +56,6 @@ function CreateSaleForm() {
   }, []);
 
   const onSubmit = async (data: CreateSaleFormData) => {
-    // console.log(data)
     const response = await createSale(data);
     if (response === 0) {
       toast.success("Venta creada con éxito");
