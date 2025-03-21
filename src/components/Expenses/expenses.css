@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#expenses-view {
+    @apply w-full;
+    @apply my-10;
+}
+
+#expenses-title {
+    @apply flex;
+    @apply items-center;
+    @apply gap-x-20;
+}
+
+#expenses-title h1 {
+    @apply font-semibold;
+    @apply text-softBlack;
+    @apply text-2xl;
+}
+
+#expenses-title #expenses-btn-container {
+    @apply flex;
+    @apply gap-x-10;
+}
+
+#expenses-title #expenses-btn-container button {
+    @apply px-10;
+    @apply py-3;
+    @apply bg-softBlack;
+    @apply rounded-[5px];
+    @apply font-bold;
+    @apply text-white;
+    @apply hover:bg-darkGray;
+}

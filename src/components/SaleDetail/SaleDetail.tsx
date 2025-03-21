@@ -21,10 +21,10 @@ function SaleDetail({saleInfo} : SaleDetailParams) {
     },[saleInfo])
     return (
         <>
-            <td>{sale?.createdAt}</td>
-            <td>{sale?.products.map(product => product.name)}</td>
-            <td>$ {saleInfo.totalAmount}</td>
-            <td>{saleInfo.payment}</td>
+            <td id="sales-td">{sale?.createdAt}</td>
+            <td id="sales-td">{sale?.products.map(product => product.name)}</td>
+            <td id="sales-td">$ {saleInfo.totalAmount}</td>
+            <td id="sales-td">{saleInfo.payment}</td>
         </>
     )
 }

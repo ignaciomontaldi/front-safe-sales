@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#clients-view {
+    @apply w-full;
+    @apply my-10;
+}
+
+#clients-view #clients-title {
+    @apply flex;
+    @apply flex-row;
+    @apply items-center;
+    @apply gap-x-20;
+}
+
+#clients-view #clients-title h1 {
+    @apply font-bold;
+    @apply text-2xl;
+    @apply text-softBlack;
+}
+
+#clients-view #clients-title #client-btn-container {
+    @apply flex;
+    @apply gap-x-4;
+}
+
+#clients-view #clients-title #client-btn-container button {
+    @apply px-6;
+    @apply py-3;
+    @apply rounded-[5px];
+    @apply font-semibold;
+    @apply text-white;
+    @apply bg-softBlack;
+    @apply hover:bg-darkGray;
+    @apply hover:text-lightGray;   
+}
+

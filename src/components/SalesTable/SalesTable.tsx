@@ -1,6 +1,5 @@
 import { Sale } from "../../types/sale.types";
 import SaleDetail from "../SaleDetail/SaleDetail"
-import "./salesTable.css"
 
 type SalesTableParams = {
     salesList: Sale[];
@@ -10,18 +9,18 @@ function SalesTable({salesList}:SalesTableParams) {
 
   return (
     <>
-        {salesList.length > 0 ? <table>
-            <thead>
-            <tr>
-                <th>Fecha</th>
-                <th>Productos</th>
-                <th>Total</th>
-                <th>Pago</th>
+        {salesList.length > 0 ? <table id="sales-table">
+            <thead id="sales-header">
+            <tr id="sales-tr">
+                <th id="sales-th">Fecha</th>
+                <th id="sales-th">Productos</th>
+                <th id="sales-th">Total</th>
+                <th id="sales-th">Pago</th>
             </tr>
             </thead>
             <tbody>
             { salesList.length > 0 && salesList.map((sale:Sale, index:number) => (
-                <tr key={index}>
+                <tr id="sales-tr" key={index}>
                     <SaleDetail saleInfo={sale}/>
                 </tr>
             ))

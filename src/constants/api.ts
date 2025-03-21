@@ -1,1 +1,1 @@
-export const API_URL = 'https://safe-sales-api.onrender.com/api/'
+export const API_URL = 'https://safe-sales-api-production.up.railway.app/api/'
