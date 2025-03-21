@@ -1,5 +1,4 @@
 import { Supplier } from "../../types/suppliers.types";
-import './suppliersList.css'
 type SuppliersListParams = {
     suppliers: Supplier[];
 }
