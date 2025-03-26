@@ -1,4 +1,6 @@
+import { useLoading } from "../../hooks/useLoading";
 import { Sale } from "../../types/sale.types";
+import Loading from "../Loading/Loading";
 import SaleDetail from "../SaleDetail/SaleDetail"
 
 type SalesTableParams = {
@@ -7,9 +9,12 @@ type SalesTableParams = {
 
 function SalesTable({salesList}:SalesTableParams) {
 
+    const {load} = useLoading();
+
   return (
-    <>
-        {salesList.length > 0 ? <table id="sales-table">
+    <>  
+        {load && <Loading message="Cargando ventas..."/>}
+        {salesList.length > 0 ? <table id="sales-table" className={load ? 'hidden' : undefined}>
             <thead id="sales-header">
             <tr id="sales-tr">
                 <th id="sales-th">Fecha</th>

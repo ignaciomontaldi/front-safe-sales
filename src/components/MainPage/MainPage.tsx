@@ -7,13 +7,14 @@ import { useEffect, useState } from 'react'
 import { useSearch } from '../../hooks/useSearch'
 import { useLoading } from '../../hooks/useLoading'
 import { getSales } from '../../service/sales.service'
+import Loading from '../Loading/Loading'
 function MainPage() {
 
     const [sales, setSales] = useState<Sale[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [copySales, setCopySales] = useState<Sale[]>(sales)
     const {inputValue, setInputValue} = useSearch();
-    const {setLoad} = useLoading();
+    const {load, setLoad} = useLoading();
     const itemsPerPage = 5;
     const totalPages = Math.ceil(sales.length / itemsPerPage);
     const lastIndex = currentPage * itemsPerPage;
@@ -21,16 +22,18 @@ function MainPage() {
     const currentSales = copySales.slice(firstIndex, lastIndex);
 
     useEffect(() => {
-        const fetchSales = async () => {
+      const fetchSales = async () => {
+          setLoad(true);
           try {
             const result = await getSales();
             setSales(result)
             setCopySales(result)
+            setLoad(false);
           } catch (error) {
             throw new Error('Error fetching sales')
+            setLoad(false);
           }
         }
-
       fetchSales();
     },[]);
 
@@ -74,6 +77,7 @@ function MainPage() {
             <button type="reset" id="reset-search" onClick={resetSearch}>Eliminar búsqueda</button>
             </span>
         </span>
+                <Loading message='Cargando ventas...'/>
                 <FilterProvider>
                 <Sales sales={currentSales}/>
                 </FilterProvider>

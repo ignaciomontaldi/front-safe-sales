@@ -3,24 +3,21 @@ import { Sale } from '../../types/sale.types'
 import SalesTable from '../SalesTable/SalesTable'
 import './sales.css'
 import { filterSales } from '../../utils/filterSales';
-import Loading from '../Loading/Loading';
 import { useLoading } from '../../hooks/useLoading';
 function Sales({sales} : {sales: Sale[]}) {
   
   const {filter, setFilter} = useFilter();
-  const {load, setLoad} = useLoading();
+  const {load} = useLoading();
   const changeFilter = (filter:string) => {
-    setLoad(true);
     setFilter(filter);
-    setLoad(false);
   }
 
   const filteredSales = filterSales(sales, filter)
 
   return (
-    <article id="sales-container">
-      <Loading message={"Cargando ventas..."} />
-        <div id="filter-container" className={!load ? 'hidden' : 'flex'}>
+    <>
+      <article id="sales-container" className={load ? 'hidden' : 'block'}>
+        <div id="filter-container" className={load ? 'hidden' : 'flex'}>
             <h1 className='text-2xl font-bold text-softBlack'>Ventas</h1>
             <span>
                 <h3 className='text-xl font-semibold text-softBlack'>Ordenar por</h3>
@@ -39,6 +36,7 @@ function Sales({sales} : {sales: Sale[]}) {
         </div>
         <SalesTable salesList={filteredSales}/>
     </article>
+    </>
   )
 }
 
