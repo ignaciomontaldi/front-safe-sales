@@ -7,3 +7,9 @@ export interface Supplier {
   createdAt: string;
   updateAt: string;
 }
+
+export type CreateSupplierFormData = {
+  name: string;
+  phone: number;
+  products: string;
+}

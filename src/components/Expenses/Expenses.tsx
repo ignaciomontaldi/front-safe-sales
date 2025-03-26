@@ -34,7 +34,7 @@ const Expenses = () => {
         </div>
         {expenses.length > 0 ?
             <ExpensesList expenses={expenses}/> :
-        <p className=' mt-20 text-center text-lg text-softBlack font-bold'>No se han cargado expensas</p>}
+        <p className='mt-20 text-center text-lg text-softBlack font-bold'>No se han cargado expensas</p>}
         </>}
         {expenseView === 1 && <CreateExpenseForm setExpenseView={setExpenseView}/>}
     </section>

@@ -10,7 +10,7 @@ export const getExpenses = () => {
        .catch(error => console.error('Error:', error));
 }
 
-export const createExpense = (data: CreateExpenseFormData) => {
+export const createExpense = async (data: CreateExpenseFormData) => {
     const newBody = JSON.stringify({
         name: data.name,
         type: data.type,

@@ -2,30 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-#clients-view {
+#suppliers-view {
     @apply w-full;
     @apply my-10;
 }
 
-#clients-view #clients-title {
+#suppliers-view #suppliers-title {
     @apply flex;
     @apply flex-row;
     @apply items-center;
     @apply gap-x-20;
 }
 
-#clients-view #clients-title h1 {
+#suppliers-view #suppliers-title h1 {
     @apply font-bold;
     @apply text-2xl;
     @apply text-softBlack;
 }
 
-#clients-view #clients-title #client-btn-container {
+#suppliers-view #suppliers-title #supplier-btn-container {
     @apply flex;
     @apply gap-x-4;
 }
 
-#clients-view #clients-title #client-btn-container button {
+#suppliers-view #suppliers-title #supplier-btn-container button {
     @apply px-6;
     @apply py-3;
     @apply rounded-[5px];

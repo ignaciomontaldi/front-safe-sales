@@ -18,7 +18,6 @@ function CreateExpenseForm({setExpenseView} : CreateExpenseFormParams) {
     })
 
     const onSubmit = async (data : CreateExpenseFormData) => {
-        console.log(data)
         const response = await createExpense(data);
         if(response.ok) {
             setExpenseView(0);
