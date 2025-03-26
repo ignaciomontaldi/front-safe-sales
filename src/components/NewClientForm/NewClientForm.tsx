@@ -18,7 +18,6 @@ function NewClientForm({setClientView} : NewClientFormParams) {
     })
 
     const onSubmit = async (data : CreateClientFormData) => {
-        // console.log(data);
         const response = await createCostumer(data);
         if(response.ok) {
             setClientView(0);

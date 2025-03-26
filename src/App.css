@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 main {
-  @apply w-[80%];
+  @apply w-full;
   @apply mx-auto;
   @apply px-16;
   @apply flex;

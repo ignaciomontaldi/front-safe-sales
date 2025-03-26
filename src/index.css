@@ -13,6 +13,11 @@ body {
   @apply py-10;
 }
 
+#root {
+  @apply w-[80%];
+  @apply mx-auto;
+}
+
 table {
   @apply w-full;
   @apply mt-8;

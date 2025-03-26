@@ -7,3 +7,9 @@ export type Expenses = {
     createdAt: string;
     paidAt:    string;
 }
+
+export type CreateExpenseFormData = {
+    name:      string;
+    type:      string;
+    amount:    number;
+}
