@@ -1,3 +1,4 @@
+import { useEditField } from "../../hooks/useEditField";
 import { useTab } from "../../hooks/useTab"
 import "./header.css"
 
@@ -8,6 +9,7 @@ type TabType = {
 
 function Header() {
   const {tab, setTab} = useTab();
+  const {setChange} = useEditField();
   
   const tabs:TabType[] = [
     {id: 0, name: "Inicio"},
@@ -20,7 +22,12 @@ function Header() {
   
   const handleChangeTab = (id: number) => {
     if(tab !== id){
+        if(tab === 2){
+          setChange(false);
+        }
+        
         setTab(id);
+
     } 
   }
 

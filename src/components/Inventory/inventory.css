@@ -57,6 +57,15 @@
   @apply place-content-center;
 }
 
+.inventory-view .inventory-table #edit-product-field {
+  @apply w-40;
+  @apply bg-softBlack;
+}
+.inventory-view .inventory-table #erase-product-field {
+  @apply w-40;
+  @apply bg-softBlack;
+}
+
 .pages-container {
   @apply w-fit;
   @apply mt-6;

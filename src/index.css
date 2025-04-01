@@ -41,3 +41,14 @@ table th {
 table tr td {
   @apply bg-lightGray;
 }
+
+table tr #edit-btn-field {
+  @apply hover:bg-darkGray;
+  @apply hover:cursor-pointer;
+  @apply hover:text-lightGray;
+}
+table tr #erase-btn-field {
+  @apply hover:bg-redSalmon;
+  @apply hover:cursor-pointer;
+  @apply hover:text-lightGray;
+}

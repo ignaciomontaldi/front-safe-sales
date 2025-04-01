@@ -3,7 +3,6 @@
 @tailwind components;
 
 header {
-    @apply w-[95%];
     @apply mx-auto;
 }
 

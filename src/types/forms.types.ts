@@ -19,3 +19,12 @@ export type CreateClientFormData = {
     frequency: string;
     phone: string;
 }
+
+export type EditProductFormData = {
+    id: string;
+    name: string;
+    trademark: string;
+    price: number;
+    stock: number;
+    supplier: string;
+}
