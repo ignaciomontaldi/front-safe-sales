@@ -1,27 +1,49 @@
+import { toast } from "sonner";
+import { useEditField } from "../../hooks/useEditField";
+import { deleteCostumerById } from "../../service/customers.service";
 import { Customer } from "../../types/customers.types";
+
 type ClientListParams = {
-    clients: Customer[];
+    clients: Customer[],
+    setEditClient: (client: Customer | null) => void,
 }
 
-const ClientList = ({clients} : ClientListParams) => {
+const ClientList = ({clients, setEditClient} : ClientListParams) => {
+  const {change, setChange} = useEditField();
+
+  const eraseClient = async (id: string) => {
+    const response = await deleteCostumerById(id);
+    if(response.ok) {
+      toast.success('Cliente eliminado con éxito.');
+      setChange(false);
+      setEditClient(null);
+    } else {
+      toast.error('Error al eliminar el cliente. Intente nuevamente.');
+    }
+  }
+
   return (
     <table id="clients-table">
         <thead id="clients-header">
-          <tr id="clients-tr">
-            <th id="clients-th">Nombre Completo</th>
-            <th id="clients-th">Teléfono</th>
-            <th id="clients-th">Frecuencia</th>
-            <th id="clients-th">Cant. de Compras</th>
+          <tr>
+            <th>Nombre Completo</th>
+            <th>Teléfono</th>
+            <th>Frecuencia</th>
+            <th>Cant. de Compras</th>
+            {change && <th id="edit-field" className="text-sm">Editar Cliente</th>}
+            {change && <th id="erase-field" className="text-sm">Eliminar Cliente</th>}
           </tr>
         </thead>
         <tbody id="clients-body">
             {
                 clients.map((client) => (
-                    <tr id="clients-tr" key={client.id}>
-                        <td id="clients-td">{client.fullname}</td>
-                        <td id="clients-td">{client.phone}</td>
-                        <td id="clients-td">{client.frequency}</td>
-                        <td id="clients-td">{client.purchases}</td>
+                    <tr key={client.id}>
+                        <td>{client.fullname}</td>
+                        <td>{client.phone}</td>
+                        <td>{client.frequency}</td>
+                        <td>{client.purchases}</td>
+                        {change && <td id="edit-btn-field" onClick={()=>setEditClient(client)}><button className="font-semibold">Editar</button></td>}
+                        {change && <td id="erase-btn-field" onClick={() => eraseClient(client.id)}><button className="font-semibold">Eliminar</button></td>}
                     </tr>
                 ))
             }

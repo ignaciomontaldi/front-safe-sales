@@ -42,6 +42,15 @@ table tr td {
   @apply bg-lightGray;
 }
 
+table #edit-field {
+  @apply w-40;
+  @apply bg-softBlack;
+}
+table #erase-field {
+  @apply w-40;
+  @apply bg-softBlack;
+}
+
 table tr #edit-btn-field {
   @apply hover:bg-darkGray;
   @apply hover:cursor-pointer;

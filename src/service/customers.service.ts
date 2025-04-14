@@ -1,5 +1,5 @@
 import { API_URL } from "../constants/api";
-import { CreateClientFormData } from "../types/forms.types";
+import { CreateClientFormData, EditClientFormData } from "../types/forms.types";
 
 const CUSTOMERS_ENDPOINT = 'customers';
 
@@ -32,4 +32,32 @@ export const createCostumer = async (data : CreateClientFormData) => {
     }
 
     return fetch(`${API_URL}${CUSTOMERS_ENDPOINT}`, options);
+}
+
+export const updateCustomerById = async (data: EditClientFormData) => {
+    const body = JSON.stringify({
+        fullname: data.fullname,
+        frequency: data.frequency,
+        phone: data.phone,
+    });
+    const options : RequestInit = {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: body,
+    }
+
+    return fetch(`${API_URL}${CUSTOMERS_ENDPOINT}/${data.id}`, options);
+}
+
+export const deleteCostumerById = async (id: string) => {
+    const options : RequestInit = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }
+
+    return fetch(`${API_URL}${CUSTOMERS_ENDPOINT}/${id}`, options);
 }
