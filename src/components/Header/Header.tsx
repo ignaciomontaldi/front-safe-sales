@@ -22,12 +22,8 @@ function Header() {
   
   const handleChangeTab = (id: number) => {
     if(tab !== id){
-        if(tab === 2){
-          setChange(false);
-        }
-        
+        setChange(false);
         setTab(id);
-
     } 
   }
 

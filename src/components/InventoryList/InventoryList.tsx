@@ -34,12 +34,12 @@ const InventoryList = ({ products, firstIndex, lastIndex, setEditProduct } : Inv
         <table className="inventory-table">
           <thead>
             <tr>
-              {change && <th id="edit-product-field" className="text-sm">Seleccione uno para modificar</th>}
               <th>Producto</th>
               <th>Marca</th>
               <th>Precio</th>
               <th>En Stock</th>
               <th>Proveedor</th>
+              {change && <th id="edit-product-field" className="text-sm">Seleccione uno para modificar</th>}
               {change && <th id="erase-product-field" className="text-sm">Eliminar un producto</th>}
             </tr>
           </thead>
@@ -47,12 +47,12 @@ const InventoryList = ({ products, firstIndex, lastIndex, setEditProduct } : Inv
             {currentProducts.map((product) => {
               return (
                 <tr key={product.id}>
-                  {change && <td id="edit-btn-field" onClick={()=>setEditProduct(product)}><button className="font-semibold">Seleccionar</button></td>}
                   <td>{product.name}</td>
                   <td>{product.trademark}</td>
                   <td>${product.price}</td>
                   <td>{product.available ? product.stock : 'Sin Stock'}</td>
                   <td>{product.supplier}</td>
+                  {change && <td id="edit-btn-field" onClick={()=>setEditProduct(product)}><button className="font-semibold">Seleccionar</button></td>}
                   {change && <td id="erase-btn-field"><button className="font-semibold" onClick={() => eraseProduct(product.id)}>Eliminar</button></td>}
                 </tr>
               );

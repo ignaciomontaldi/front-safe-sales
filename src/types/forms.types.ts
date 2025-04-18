@@ -36,3 +36,10 @@ export type EditClientFormData = {
   phone: number;
   purchases: number;
 };
+
+export type EditExpenseFormData = {
+  id: string;
+  name: string;
+  type: string;
+  amount: number;
+}

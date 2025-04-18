@@ -12,17 +12,17 @@ import { EditClientScheme } from "../../schemes/EditClientScheme";
 import { EditClientFormData } from "../../types/forms.types";
 import { updateCustomerById } from "../../service/customers.service";
 
-type EditProductFormParams = {
+type EditClientFormParams = {
   customer: Customer;
   setEditClient: (client : Customer | null) => void;
   setClientView: (view : number) => void;
 };
 
-function EditProductForm({
+function EditClientForm({
   customer,
   setEditClient,
   setClientView
-}: EditProductFormParams) {
+}: EditClientFormParams) {
   const { setChange } = useEditField();
   const {load, setLoad} = useLoading()
 
@@ -127,4 +127,4 @@ function EditProductForm({
   );
 }
 
-export default EditProductForm;
+export default EditClientForm;
