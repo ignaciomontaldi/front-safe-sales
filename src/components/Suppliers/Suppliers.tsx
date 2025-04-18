@@ -6,12 +6,17 @@ import SuppliersList from "../SuppliersList/SuppliersList";
 import CreateSupplierForm from "../CreateSupplierForm/CreateSupplierForm";
 import { useLoading } from "../../hooks/useLoading";
 import Loading from "../Loading/Loading";
+import { useEditField } from "../../hooks/useEditField";
+import EditSupplierForm from "../EditSupplierForm/EditSupplierForm";
+import { Toaster } from "sonner";
 
 const Suppliers = () => {
 
   const [suppliers, setSuppliers] = useState<Supplier[]>([]);
+  const [editSupplier, setEditSupplier] = useState<Supplier | null>(null);
   const [suppliersView, setSuppliersView] = useState<number>(0);
   const {load, setLoad} = useLoading();
+  const {change, setChange} = useEditField();
 
   useEffect(() => {
     const fetchSuppliers = async () => {
@@ -30,7 +35,9 @@ const Suppliers = () => {
 
   return (
     <section id="suppliers-view">
-      {suppliersView === 0 && (
+      <Toaster richColors visibleToasts={1}/>
+      {!editSupplier && <>
+        {suppliersView === 0 && (
         <>
           <div id="suppliers-title">
             <h1>Proveedores</h1>
@@ -42,17 +49,19 @@ const Suppliers = () => {
               >
                 Agregar Proveedor
               </button>
-              <button type="button" id="edit-supplier-btn">
+              <button type="button" id="edit-supplier-btn" onClick={() => setChange(!change)}>
                 Editar Proveedor
               </button>
             </div>
           </div>
           <Loading message="Cargando expensas..."/>
           {suppliers.length > 0 ? <div id="supplier-table-container" className={load ? 'hidden' : 'block'}>
-            <SuppliersList suppliers={suppliers} />
+            <SuppliersList suppliers={suppliers} setEditSupplier={setEditSupplier}/>
           </div> : <p className={load ? 'hidden' : 'mt-20 text-center text-lg text-softBlack font-bold'}>No se cargaron proveedores</p>}
         </>
       )}
+      </>}
+      {editSupplier && <EditSupplierForm supplier={editSupplier} setEditSupplier={setEditSupplier} setSupplierView={setSuppliersView}/>}
       {suppliersView === 1 && <CreateSupplierForm setSuppliersView={setSuppliersView} />}
     </section>
   );

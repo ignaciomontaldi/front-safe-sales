@@ -41,5 +41,13 @@ export type EditExpenseFormData = {
   id: string;
   name: string;
   type: string;
+  status: string;
   amount: number;
+}
+
+export type EditSupplierFormData = {
+  id: string;
+  name: string;
+  phone: number;
+  products: string;
 }

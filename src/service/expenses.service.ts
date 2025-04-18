@@ -49,14 +49,3 @@ export const updateExpense = async (data: EditExpenseFormData) => {
 
     return fetch(`${API_URL}${EXPENSES_ENDPOINT}/${data.id}`, options);
 }
-
-export const deleteExpenseById = async (id: string) => {
-    const options : RequestInit = {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    }
-
-    return fetch(`${API_URL}${EXPENSES_ENDPOINT}/${id}`, options);
-}

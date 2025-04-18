@@ -20,6 +20,7 @@
 }
 
 #new-supplier-form fieldset input {
+    @apply w-[30%];
     @apply py-1;
     @apply px-4;
     @apply italic;
@@ -27,18 +28,6 @@
     @apply border-2;
     @apply border-graySlate;
     @apply rounded-full;
-}
-
-#new-supplier-form fieldset #name-input {
-    @apply w-[35%];
-}
-
-#new-supplier-form fieldset #phone-input {
-    @apply w-[20%];
-}
-
-#new-supplier-form fieldset #products-input {
-    @apply w-[17%];
 }
 
 #new-supplier-form #btn-container button {

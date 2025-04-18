@@ -87,7 +87,7 @@ function EditClientForm({
               </div>}
             </div>
             <div id="form-group">
-              <label htmlFor="trademark">Teléfono</label>
+              <label htmlFor="phone">Teléfono</label>
               <input
                 type="number"
                 id="phone"
@@ -100,7 +100,7 @@ function EditClientForm({
               </div>}
             </div>
             <div id="form-group">
-              <label htmlFor="price">Frecuencia</label>
+              <label htmlFor="frequency">Frecuencia</label>
               <select id="frequency" defaultValue={customer.frequency} {...register("frequency")}>
                 <option value="BAJA">BAJA</option>
                 <option value="MEDIA">MEDIA</option>

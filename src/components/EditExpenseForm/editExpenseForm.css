@@ -15,7 +15,7 @@
     @apply italic;
 }
 
-#edit-client-form #form-group input {
+#edit-client-form #form-group input, #edit-client-form #form-group select {
     @apply w-[30%];
     @apply py-1;
     @apply px-4;

@@ -18,6 +18,7 @@ function CreateSupplierForm({setSuppliersView} : CreateSupplierFormParams) {
     })
 
     const onSubmit = async (data : CreateSupplierFormData) => {
+      console.log(data);
         const response = await createSupplier(data);
         if(response.ok) {
             setSuppliersView(0);

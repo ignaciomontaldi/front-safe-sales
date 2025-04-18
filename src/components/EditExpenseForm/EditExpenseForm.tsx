@@ -70,7 +70,7 @@ function EditExpenseForm({
           <h1 className="my-2 text-2xl font-bold text-softBlack">
             Actualizar Cliente
           </h1>
-          <Loading message="Cargando datos del cliente..."/>
+          <Loading message="Cargando datos de la expensa..."/>
           {!load && <>
             <form id="edit-client-form" onSubmit={handleSubmit(onSubmit)}>
             <div id="form-group">
@@ -110,6 +110,17 @@ function EditExpenseForm({
               {errors && errors.amount && <div id="error-container">
                 <TbAlertCircle />
                 <p id="error-msg">{errors.amount.message}</p>
+              </div>}
+            </div>
+            <div id="form-group">
+              <label htmlFor="amount">Estado</label>
+              <select id="status" defaultValue={expense.status} {...register("status")}>
+                <option value="PAGADO">PAGADO</option>
+                <option value="PENDIENTE">PENDIENTE</option>
+              </select>
+              {errors && errors.status && <div id="error-container">
+                <TbAlertCircle />
+                <p id="error-msg">{errors.status.message}</p>
               </div>}
             </div>
             <div id="btn-container">
